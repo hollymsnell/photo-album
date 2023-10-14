@@ -8,7 +8,8 @@ class PhotosController < ApplicationController
     photo = Photo.new(
       name: params[:name],
       width: params[:width],
-      height: params[:height]
+      height: params[:height],
+      image: params[:image]
     )
     photo.save
     render json: photo.as_json
@@ -24,6 +25,7 @@ class PhotosController < ApplicationController
     photo.name = params[:name] || photo.name
     photo.width = params[:width] || photo.width
     photo.height = params[:height] || photo.height
+    photo.image = params[:image] || photo.image
     photo.save
     render json: photo.as_json
   end
