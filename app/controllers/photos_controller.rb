@@ -8,6 +8,7 @@ class PhotosController < ApplicationController
     photo = Photo.new(
       name: params[:name],
       width: params[:width],
+      location: params[:location],
       height: params[:height],
       image: params[:image]
     )
